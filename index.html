@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marchbot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#/" class="logo">marchbot</a>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search teams or players..." autocomplete="off">
+                <div id="search-dropdown" class="search-dropdown hidden"></div>
+            </div>
+            <a href="#/stats" class="predict-btn">Stats</a>
+        </div>
+    </header>
+
+    <main id="app">
+        <div id="loading-screen">
+            <div class="loading-content">
+                <h2>marchbot</h2>
+                <p>Loading database...</p>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <p id="progress-text">0%</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
