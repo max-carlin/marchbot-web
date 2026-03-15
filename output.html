@@ -23,8 +23,17 @@
     width: 300ch;
   }
   @media (max-width: 768px) {
+    body {
+      display: block;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+    }
     .container {
-      font-size: 1.8vw;
+      font-size: 3vw;
+      position: absolute;
+      left: calc(50vw - 146ch);
+      top: calc(50vh - 38.525em);
     }
   }
 </style>

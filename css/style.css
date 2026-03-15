@@ -550,7 +550,7 @@ main {
 
 @media (max-width: 768px) {
     .logo-container iframe {
-        height: 380px;
+        height: calc(24vw + 60px);
     }
 }
 
