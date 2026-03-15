@@ -223,7 +223,7 @@ function renderUpcomingGames(container, data) {
     const yyyy = dateObj.getFullYear();
     const dateLabel = `${mm}/${dd}/${yyyy}`;
 
-    let html = `<h2 class="section-title">MaxModel Predictions</h2><p class="section-subtitle">${dateLabel}</p>`;
+    let html = '';
     html += '<div class="games-grid">';
 
     for (const game of games) {
@@ -241,6 +241,9 @@ function renderUpcomingGames(container, data) {
         const homeTeamLink = `#/team/${home.id}`;
         const awayTeamLink = `#/team/${away.id}`;
 
+        const homeLogo = home.logo || '';
+        const awayLogo = away.logo || '';
+
         html += `
         <div class="game-card">
             <div class="game-meta">
@@ -250,12 +253,18 @@ function renderUpcomingGames(container, data) {
             </div>
             <div class="game-matchup">
                 <div class="game-team ${hasPrediction && !homeFavored ? 'underdog' : ''}">
-                    <a href="${awayTeamLink}" class="team-name">${awayRank}${away.name}</a>
+                    <a href="${awayTeamLink}" class="team-name">
+                        ${awayLogo ? `<img class="team-logo" src="${awayLogo}" alt="${away.name}">` : ''}
+                        ${awayRank}${away.abbreviation || away.name}
+                    </a>
                     ${hasPrediction ? `<span class="team-prob ${!homeFavored ? 'favored' : ''}">${(awayProb * 100).toFixed(1)}%</span>` : ''}
                 </div>
                 <span class="at-label">@</span>
                 <div class="game-team ${hasPrediction && homeFavored ? '' : 'underdog'}">
-                    <a href="${homeTeamLink}" class="team-name">${homeRank}${home.name}</a>
+                    <a href="${homeTeamLink}" class="team-name">
+                        ${homeLogo ? `<img class="team-logo" src="${homeLogo}" alt="${home.name}">` : ''}
+                        ${homeRank}${home.abbreviation || home.name}
+                    </a>
                     ${hasPrediction ? `<span class="team-prob ${homeFavored ? 'favored' : ''}">${(homeProb * 100).toFixed(1)}%</span>` : ''}
                 </div>
             </div>
