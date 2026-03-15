@@ -17,9 +17,7 @@ async function init() {
     });
 
     // Load predictions in background (non-blocking)
-    loadPredictions().then(() => {
-        setupSidebarMatchup();
-    }).catch(() => {});
+    loadPredictions().catch(() => {});
 
     // Setup sidebar
     setupSidebar();
@@ -133,7 +131,24 @@ function showSearchResults(q, dropdown) {
     });
 }
 
-function setupSidebarMatchup() {
+function renderPredictPage() {
+    app.innerHTML = `
+        <div class="predict-page">
+            <h1>Custom Matchup</h1>
+            <div class="predict-matchup">
+                <div class="team-picker" id="picker1">
+                    <input type="text" placeholder="Team 1..." autocomplete="off">
+                    <div class="picker-dropdown hidden"></div>
+                </div>
+                <span class="vs-label">vs</span>
+                <div class="team-picker" id="picker2">
+                    <input type="text" placeholder="Team 2..." autocomplete="off">
+                    <div class="picker-dropdown hidden"></div>
+                </div>
+            </div>
+            <div class="prediction-result hidden" id="prediction-result"></div>
+        </div>
+    `;
     let team1 = null, team2 = null;
     setupPicker('picker1', (t) => { team1 = t; showPrediction(team1, team2); });
     setupPicker('picker2', (t) => { team2 = t; showPrediction(team1, team2); });
@@ -148,6 +163,8 @@ function route() {
         renderTeamPage(parts[1]);
     } else if (parts[0] === 'player' && parts[1]) {
         renderPlayerPage(parts[1]);
+    } else if (parts[0] === 'predict') {
+        renderPredictPage();
     } else if (parts[0] === 'stats') {
         renderStatsPage();
     } else {
@@ -164,8 +181,11 @@ function renderHomePage() {
                 <iframe src="output.html" title="marchbot logo"></iframe>
             </div>
         </div>
-        <div id="upcoming-games">
-            <div class="loading-content"><p>Loading upcoming games...</p></div>
+        <div class="games-backdrop">
+            <iframe class="backdrop-iframe" src="dunk.html" title="background animation"></iframe>
+            <div class="games-content" id="upcoming-games">
+                <div class="loading-content"><p>Loading upcoming games...</p></div>
+            </div>
         </div>
     `;
 
