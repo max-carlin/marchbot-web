@@ -28,11 +28,14 @@
   b.c { opacity: 0.7; }
   b.d { opacity: 1.0; }
   @media (max-width: 768px) {
+    body {
+      align-items: flex-start;
+    }
     .container {
       font-size: 1.6vw;
       width: 100vw;
       overflow: hidden;
-      transform: translateX(-15%);
+      transform-origin: top center;
     }
   }
 </style>
@@ -46,6 +49,21 @@ var frames=["<b class=a>                   11011111</b><b class=b>0 </b><b class
 var f=document.getElementById("f"),i=0;
 f.innerHTML=frames[0];
 setInterval(function(){i=(i+1)%frames.length;f.innerHTML=frames[i];},167);
+if(window.matchMedia("(max-width:768px)").matches){
+  var c=document.querySelector(".container");
+  function fit(){
+    c.style.transform="";
+    var ch=c.scrollHeight,ih=window.innerHeight;
+    if(ch>0&&ih>ch){
+      var s=ih/ch;
+      c.style.transform="scale("+s+") translateX(-15%)";
+    }else{
+      c.style.transform="translateX(-15%)";
+    }
+  }
+  f.innerHTML=frames[0];fit();
+  new ResizeObserver(fit).observe(document.documentElement);
+}
 </script>
 </body>
 </html>
