@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ASCII Binary Art</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,6 +21,13 @@
     color: #000000;
     white-space: pre;
     width: 300ch;
+  }
+  @media (max-width: 768px) {
+    .container {
+      font-size: 1.8vw;
+      width: 100vw;
+      overflow: hidden;
+    }
   }
 </style>
 </head>

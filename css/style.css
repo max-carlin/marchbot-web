@@ -548,6 +548,12 @@ main {
     color: var(--text-dim);
 }
 
+@media (max-width: 768px) {
+    .logo-container iframe {
+        height: 280px;
+    }
+}
+
 @media (max-width: 600px) {
     .ranked-metrics {
         gap: 12px;
