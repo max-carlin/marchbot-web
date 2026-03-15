@@ -3,7 +3,7 @@ import { drawCourtBackground, drawCourtLines } from './court.js';
 /**
  * Render a shot chart with heatmap and scatter overlay.
  * @param {HTMLCanvasElement} canvas
- * @param {Array} shots - [{coordinate_x, coordinate_y, scoring_play}]
+ * @param {Array} shots - [{coordinate_x, coordinate_y, scoring_play, play_type}]
  */
 export function renderShotChart(canvas, shots) {
     const courtW = 600;
@@ -143,9 +143,12 @@ export function renderShotChart(canvas, shots) {
     drawCourtLines(ctx, W, H, cx, cy, scaleX, scaleY);
 
     // 4. Scatter: misses as red X, makes as green circles (on top of everything)
+    // Store pixel positions for hit-testing
+    const shotPixels = [];
     for (const shot of shots) {
         const px = cx(shot.coordinate_x);
         const py = cy(shot.coordinate_y);
+        shotPixels.push({ px, py, shot });
 
         if (shot.scoring_play) {
             ctx.beginPath();
@@ -191,4 +194,106 @@ export function renderShotChart(canvas, shots) {
     ctx.textAlign = 'center';
     ctx.fillText('Hot', legendX + legendW / 2, legendY - 4);
     ctx.fillText('Cold', legendX + legendW / 2, legendY + legendH + 12);
+
+    // 6. Interactive tooltip on hover/touch
+    setupTooltip(canvas, shotPixels, W, H);
+}
+
+function formatPlayType(playType) {
+    if (!playType) return 'Shot';
+    return playType
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function setupTooltip(canvas, shotPixels, canvasW, canvasH) {
+    // Create or reuse tooltip element
+    let tooltip = canvas.parentElement.querySelector('.shot-tooltip');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.className = 'shot-tooltip';
+        Object.assign(tooltip.style, {
+            position: 'absolute',
+            pointerEvents: 'none',
+            background: 'rgba(0,0,0,0.85)',
+            color: '#fff',
+            padding: '6px 10px',
+            borderRadius: '6px',
+            fontSize: '13px',
+            fontFamily: "'Times New Roman', Times, Georgia, serif",
+            lineHeight: '1.4',
+            whiteSpace: 'nowrap',
+            display: 'none',
+            zIndex: '10',
+        });
+        canvas.parentElement.style.position = 'relative';
+        canvas.parentElement.appendChild(tooltip);
+    }
+
+    const hitRadius = 8;
+
+    function findNearest(mouseX, mouseY) {
+        // Convert mouse position to canvas coordinates
+        const rect = canvas.getBoundingClientRect();
+        const sx = canvasW / rect.width;
+        const sy = canvasH / rect.height;
+        const cx = (mouseX - rect.left) * sx;
+        const cy = (mouseY - rect.top) * sy;
+
+        let best = null;
+        let bestDist = hitRadius * sx; // scale hit radius to canvas space
+        for (const sp of shotPixels) {
+            const d = Math.hypot(sp.px - cx, sp.py - cy);
+            if (d < bestDist) {
+                bestDist = d;
+                best = sp;
+            }
+        }
+        return best;
+    }
+
+    function showTooltip(clientX, clientY) {
+        const hit = findNearest(clientX, clientY);
+        if (!hit) {
+            tooltip.style.display = 'none';
+            canvas.style.cursor = '';
+            return;
+        }
+
+        const s = hit.shot;
+        const made = s.scoring_play ? 'Made' : 'Missed';
+        const madeColor = s.scoring_play ? '#2ecc71' : '#e74c3c';
+        const type = formatPlayType(s.play_type);
+        tooltip.innerHTML = `<span style="color:${madeColor};font-weight:700">${made}</span> ${type}`;
+
+        // Position tooltip relative to canvas container
+        const containerRect = canvas.parentElement.getBoundingClientRect();
+        let tipX = clientX - containerRect.left + 12;
+        let tipY = clientY - containerRect.top - 28;
+
+        // Keep tooltip in view
+        tooltip.style.display = 'block';
+        const tipRect = tooltip.getBoundingClientRect();
+        if (tipX + tipRect.width > containerRect.width) {
+            tipX = clientX - containerRect.left - tipRect.width - 12;
+        }
+        if (tipY < 0) tipY = clientY - containerRect.top + 16;
+
+        tooltip.style.left = tipX + 'px';
+        tooltip.style.top = tipY + 'px';
+        canvas.style.cursor = 'crosshair';
+    }
+
+    canvas.addEventListener('mousemove', e => showTooltip(e.clientX, e.clientY));
+    canvas.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+        canvas.style.cursor = '';
+    });
+    canvas.addEventListener('touchstart', e => {
+        const t = e.touches[0];
+        showTooltip(t.clientX, t.clientY);
+    }, { passive: true });
+    canvas.addEventListener('touchend', () => {
+        tooltip.style.display = 'none';
+    });
 }
