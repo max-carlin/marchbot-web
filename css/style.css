@@ -553,7 +553,8 @@ main {
         margin-bottom: 0;
     }
     .logo-container iframe {
-        height: 84vw;
+        height: 147vw;
+        max-height: calc(100vh - 56px);
         overflow: hidden;
     }
 }
