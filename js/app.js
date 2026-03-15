@@ -1,6 +1,6 @@
 import { initDB, getTeams, getTeam, getTeamGames, getTeamTopPlayers,
          getPlayerShots, getPlayer, getPlayerTeamName,
-         searchTeams, searchPlayers } from './db.js';
+         searchTeams, searchPlayers, getTeamStats } from './db.js';
 import { loadPredictions, getPrediction, getPredictionTeams } from './predict.js';
 import { renderSeasonLog, shortName } from './charts/season-log.js';
 import { renderTopPlayersBars, renderTopPlayersScatter } from './charts/top-players.js';
@@ -17,18 +17,54 @@ async function init() {
     });
 
     // Load predictions in background (non-blocking)
-    loadPredictions().catch(() => {});
+    loadPredictions().then(() => {
+        setupSidebarMatchup();
+    }).catch(() => {});
 
-    // Setup header search
-    setupHeaderSearch();
+    // Setup sidebar
+    setupSidebar();
+    setupSidebarSearch();
 
     // Route
     window.addEventListener('hashchange', route);
     route();
 }
 
-// --- Header Search ---
-function setupHeaderSearch() {
+// --- Sidebar ---
+function setupSidebar() {
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function open() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        toggle.classList.add('active');
+    }
+
+    function close() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        toggle.classList.remove('active');
+    }
+
+    toggle.addEventListener('click', () => {
+        if (sidebar.classList.contains('open')) close();
+        else open();
+    });
+
+    overlay.addEventListener('click', close);
+
+    // Close sidebar on navigation
+    window.addEventListener('hashchange', close);
+
+    // Close sidebar links
+    sidebar.querySelectorAll('.sidebar-link').forEach(link => {
+        link.addEventListener('click', close);
+    });
+}
+
+function setupSidebarSearch() {
     const input = document.getElementById('search-input');
     const dropdown = document.getElementById('search-dropdown');
     let debounceTimer;
@@ -51,7 +87,7 @@ function setupHeaderSearch() {
     });
 
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.search-container')) {
+        if (!e.target.closest('.sidebar-search')) {
             dropdown.classList.add('hidden');
         }
     });
@@ -97,6 +133,12 @@ function showSearchResults(q, dropdown) {
     });
 }
 
+function setupSidebarMatchup() {
+    let team1 = null, team2 = null;
+    setupPicker('picker1', (t) => { team1 = t; showPrediction(team1, team2); });
+    setupPicker('picker2', (t) => { team2 = t; showPrediction(team1, team2); });
+}
+
 // --- Router ---
 function route() {
     const hash = window.location.hash || '#/';
@@ -121,33 +163,11 @@ function renderHomePage() {
             <div class="logo-container">
                 <iframe src="output.html" title="marchbot logo"></iframe>
             </div>
-
         </div>
         <div id="upcoming-games">
             <div class="loading-content"><p>Loading upcoming games...</p></div>
         </div>
-        <div class="predict-section">
-            <h2 class="section-title">Custom Matchup</h2>
-            <div class="predict-page">
-                <div class="predict-inputs">
-                    <div class="team-picker" id="picker1">
-                        <input type="text" placeholder="Team 1..." autocomplete="off">
-                        <div class="picker-dropdown hidden"></div>
-                    </div>
-                    <span class="vs-label">vs</span>
-                    <div class="team-picker" id="picker2">
-                        <input type="text" placeholder="Team 2..." autocomplete="off">
-                        <div class="picker-dropdown hidden"></div>
-                    </div>
-                </div>
-                <div class="prediction-result hidden" id="prediction-result"></div>
-            </div>
-        </div>
     `;
-
-    let team1 = null, team2 = null;
-    setupPicker('picker1', (t) => { team1 = t; showPrediction(team1, team2); });
-    setupPicker('picker2', (t) => { team2 = t; showPrediction(team1, team2); });
 
     loadUpcomingGames();
 }
@@ -231,25 +251,100 @@ function renderStatsPage() {
         <div class="home-page">
             <h1>Stats</h1>
             <p class="subtitle">Browse teams and players</p>
-            <div class="quick-links" id="quick-links"></div>
+            <div class="stats-search-container">
+                <input type="text" id="stats-search" placeholder="Search teams or players..." autocomplete="off">
+                <div id="stats-search-dropdown" class="search-dropdown hidden"></div>
+            </div>
         </div>
+        <div id="top-ranked"></div>
     `;
 
-    const teams = getTeams();
-    const topNames = ['Duke', 'North Carolina', 'Kansas', 'Kentucky', 'Gonzaga',
-                      'UConn', 'Houston', 'Purdue', 'Auburn', 'Tennessee',
-                      'Michigan State', 'Alabama', 'Iowa State', 'Arizona'];
-    const links = document.getElementById('quick-links');
-    for (const name of topNames) {
-        const team = teams.find(t => t.team_name.includes(name));
-        if (team) {
-            const a = document.createElement('a');
-            a.className = 'quick-link';
-            a.href = `#/team/${team.team_id}`;
-            a.textContent = shortName(team.team_name);
-            links.appendChild(a);
+    setupStatsSearch();
+    loadTopRanked();
+}
+
+async function loadTopRanked() {
+    const container = document.getElementById('top-ranked');
+    try {
+        const resp = await fetch(
+            'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings'
+        );
+        const data = await resp.json();
+        const ap = data.rankings[0]; // AP Top 25
+        const top5 = ap.ranks.slice(0, 5);
+
+        let html = `<h2 class="section-title">AP Top 5</h2>`;
+        html += '<div class="ranked-list">';
+
+        for (const entry of top5) {
+            const t = entry.team;
+            const record = entry.recordSummary || '';
+            const stats = getTeamStats(t.id);
+            const ppg = stats ? stats.ppg : '—';
+            const oppPpg = stats ? stats.opp_ppg : '—';
+            const margin = stats ? (stats.ppg - stats.opp_ppg).toFixed(1) : '—';
+            const marginSign = stats && (stats.ppg - stats.opp_ppg) > 0 ? '+' : '';
+            const logo = t.logos && t.logos[0] ? t.logos[0].href : '';
+
+            html += `
+            <a href="#/team/${t.id}" class="ranked-card">
+                <div class="ranked-rank">${entry.current}</div>
+                ${logo ? `<img class="ranked-logo" src="${logo}" alt="">` : ''}
+                <div class="ranked-info">
+                    <div class="ranked-name">${t.location} ${t.name}</div>
+                    <div class="ranked-record">${record}</div>
+                </div>
+                <div class="ranked-metrics">
+                    <div class="ranked-metric">
+                        <span class="metric-value">${ppg}</span>
+                        <span class="metric-label">PPG</span>
+                    </div>
+                    <div class="ranked-metric">
+                        <span class="metric-value">${oppPpg}</span>
+                        <span class="metric-label">OPP</span>
+                    </div>
+                    <div class="ranked-metric">
+                        <span class="metric-value ${stats && (stats.ppg - stats.opp_ppg) > 0 ? 'positive' : 'negative'}">${marginSign}${margin}</span>
+                        <span class="metric-label">MARGIN</span>
+                    </div>
+                </div>
+            </a>`;
         }
+
+        html += '</div>';
+        container.innerHTML = html;
+    } catch {
+        container.innerHTML = '';
     }
+}
+
+function setupStatsSearch() {
+    const input = document.getElementById('stats-search');
+    const dropdown = document.getElementById('stats-search-dropdown');
+    let debounceTimer;
+
+    input.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            const q = input.value.trim();
+            if (q.length < 2) {
+                dropdown.classList.add('hidden');
+                return;
+            }
+            showSearchResults(q, dropdown);
+        }, 200);
+    });
+
+    input.addEventListener('focus', () => {
+        const q = input.value.trim();
+        if (q.length >= 2) showSearchResults(q, dropdown);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.stats-search-container')) {
+            dropdown.classList.add('hidden');
+        }
+    });
 }
 
 function renderTeamPage(teamId) {
@@ -296,17 +391,14 @@ function renderTeamPage(teamId) {
         </div>
     `;
 
-    // Render season log
     const logCanvas = document.getElementById('season-log-chart');
     renderSeasonLog(logCanvas, teamId, games);
 
-    // Render top players
     const players = getTeamTopPlayers(teamId);
     if (players.length) {
         renderTopPlayersBars(document.getElementById('top-players-bars'), players);
         renderTopPlayersScatter(document.getElementById('top-players-scatter'), players);
 
-        // Make player names clickable via chart click handler
         const barsCanvas = document.getElementById('top-players-bars');
         barsCanvas.style.cursor = 'pointer';
         barsCanvas.addEventListener('click', (evt) => {
@@ -351,9 +443,9 @@ function renderPlayerPage(athleteId) {
     renderShotChart(canvas, shots);
 }
 
-
 function setupPicker(pickerId, onSelect) {
     const picker = document.getElementById(pickerId);
+    if (!picker) return;
     const input = picker.querySelector('input');
     const dropdown = picker.querySelector('.picker-dropdown');
     let debounce;
@@ -366,7 +458,6 @@ function setupPicker(pickerId, onSelect) {
                 dropdown.classList.add('hidden');
                 return;
             }
-            // Use prediction teams for filtering
             const predTeams = getPredictionTeams();
             const allTeams = Object.entries(predTeams)
                 .filter(([, name]) => name.toLowerCase().includes(q.toLowerCase()))
@@ -401,6 +492,7 @@ function setupPicker(pickerId, onSelect) {
 
 function showPrediction(team1, team2) {
     const result = document.getElementById('prediction-result');
+    if (!result) return;
     if (!team1 || !team2) {
         result.classList.add('hidden');
         return;

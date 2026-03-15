@@ -9,16 +9,42 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="#/" class="logo">marchbot</a>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search teams or players..." autocomplete="off">
+    <nav class="topbar">
+        <a href="#/" class="logo">marchbot</a>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-section">
+            <h3 class="sidebar-label">Search</h3>
+            <div class="sidebar-search">
+                <input type="text" id="search-input" placeholder="Teams or players..." autocomplete="off">
                 <div id="search-dropdown" class="search-dropdown hidden"></div>
             </div>
-            <a href="#/stats" class="predict-btn">Stats</a>
         </div>
-    </header>
+        <div class="sidebar-section">
+            <h3 class="sidebar-label">Custom Matchup</h3>
+            <div class="sidebar-matchup">
+                <div class="team-picker" id="picker1">
+                    <input type="text" placeholder="Team 1..." autocomplete="off">
+                    <div class="picker-dropdown hidden"></div>
+                </div>
+                <span class="vs-label">vs</span>
+                <div class="team-picker" id="picker2">
+                    <input type="text" placeholder="Team 2..." autocomplete="off">
+                    <div class="picker-dropdown hidden"></div>
+                </div>
+                <div class="prediction-result hidden" id="prediction-result"></div>
+            </div>
+        </div>
+        <div class="sidebar-section">
+            <h3 class="sidebar-label">Browse</h3>
+            <a href="#/stats" class="sidebar-link">Stats</a>
+        </div>
+    </aside>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <main id="app">
         <div id="loading-screen">

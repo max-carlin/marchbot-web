@@ -145,6 +145,20 @@ export function searchTeams(q) {
     );
 }
 
+export function getTeamStats(teamId) {
+    const rows = query(`
+        SELECT
+            COUNT(*) as games,
+            SUM(CASE WHEN (home_team_id = ? AND home_score > away_score)
+                       OR (away_team_id = ? AND away_score > home_score) THEN 1 ELSE 0 END) as wins,
+            ROUND(AVG(CASE WHEN home_team_id = ? THEN home_score ELSE away_score END), 1) as ppg,
+            ROUND(AVG(CASE WHEN home_team_id = ? THEN away_score ELSE home_score END), 1) as opp_ppg
+        FROM games
+        WHERE home_team_id = ? OR away_team_id = ?
+    `, [teamId, teamId, teamId, teamId, teamId, teamId]);
+    return rows[0] || null;
+}
+
 export function searchPlayers(q) {
     return query(
         "SELECT athlete_id, display_name, position, last_team_id FROM athletes WHERE display_name LIKE ? ORDER BY display_name LIMIT 10",
