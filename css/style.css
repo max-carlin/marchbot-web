@@ -549,8 +549,11 @@ main {
 }
 
 @media (max-width: 768px) {
+    .home-page {
+        margin-bottom: 0;
+    }
     .logo-container iframe {
-        height: calc(10.9vw + 60px);
+        height: calc(24vw + 80px);
     }
 }
 
