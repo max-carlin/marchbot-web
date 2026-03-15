@@ -1,4 +1,4 @@
-import { drawHalfCourt } from './court.js';
+import { drawCourtBackground, drawCourtLines } from './court.js';
 
 /**
  * Render a shot chart with heatmap and scatter overlay.
@@ -6,15 +6,26 @@ import { drawHalfCourt } from './court.js';
  * @param {Array} shots - [{coordinate_x, coordinate_y, scoring_play}]
  */
 export function renderShotChart(canvas, shots) {
-    const W = 600;
-    const H = 460;
+    const courtW = 600;
+    const courtH = 460;
+    const legendMargin = 50; // space for legend to the right
+    const W = courtW + legendMargin;
+    const H = courtH;
     canvas.width = W;
     canvas.height = H;
 
     const ctx = canvas.getContext('2d');
-    const { cx, cy, scaleX, scaleY } = drawHalfCourt(ctx, W, H);
 
-    if (!shots.length) return;
+    // 1. Draw court background (white fill over entire canvas)
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, W, H);
+    const { cx, cy, scaleX, scaleY } = drawCourtBackground(ctx, courtW, courtH);
+
+    if (!shots.length) {
+        // Still draw lines even with no shots
+        drawCourtLines(ctx, W, H, cx, cy, scaleX, scaleY);
+        return;
+    }
 
     const allX = shots.map(s => s.coordinate_x);
     const allY = shots.map(s => s.coordinate_y);
@@ -80,25 +91,22 @@ export function renderShotChart(canvas, shots) {
         if (blurred[i] > maxVal) maxVal = blurred[i];
     }
 
-    // YlOrRd colormap (simplified)
-    function ylOrRd(t) {
-        // t: 0..1
-        if (t < 0.25) {
-            const s = t / 0.25;
-            return [255, Math.round(255 - s * 60), Math.round(204 - s * 100)];
-        } else if (t < 0.5) {
-            const s = (t - 0.25) / 0.25;
-            return [255, Math.round(195 - s * 65), Math.round(104 - s * 60)];
-        } else if (t < 0.75) {
-            const s = (t - 0.5) / 0.25;
-            return [Math.round(255 - s * 30), Math.round(130 - s * 80), Math.round(44 - s * 24)];
+    // Blue-to-red heatmap colormap
+    function heatColor(t) {
+        // t: 0..1 — cool blue → warm red
+        if (t < 0.33) {
+            const s = t / 0.33;
+            return [Math.round(70 + s * 20), Math.round(130 + s * 50), Math.round(180 + s * 30)];
+        } else if (t < 0.66) {
+            const s = (t - 0.33) / 0.33;
+            return [Math.round(90 + s * 140), Math.round(180 - s * 50), Math.round(210 - s * 140)];
         } else {
-            const s = (t - 0.75) / 0.25;
-            return [Math.round(225 - s * 95), Math.round(50 - s * 40), Math.round(20 - s * 10)];
+            const s = (t - 0.66) / 0.34;
+            return [Math.round(230 + s * 15), Math.round(130 - s * 80), Math.round(70 - s * 50)];
         }
     }
 
-    // Render heatmap with putImageData
+    // 2. Render heatmap on top of background
     if (maxVal > 0) {
         const imgData = ctx.createImageData(res, res);
         for (let y = 0; y < res; y++) {
@@ -106,7 +114,7 @@ export function renderShotChart(canvas, shots) {
                 const val = blurred[y * res + x] / maxVal;
                 const idx = ((res - 1 - y) * res + x) * 4; // flip Y for canvas
                 if (val > 0.02) {
-                    const [r, g, b] = ylOrRd(val);
+                    const [r, g, b] = heatColor(val);
                     imgData.data[idx] = r;
                     imgData.data[idx + 1] = g;
                     imgData.data[idx + 2] = b;
@@ -131,7 +139,10 @@ export function renderShotChart(canvas, shots) {
         ctx.drawImage(offscreen, dstX, dstY, dstW, dstH);
     }
 
-    // Scatter: misses as red X, makes as green circles
+    // 3. Draw court lines ON TOP of heatmap
+    drawCourtLines(ctx, W, H, cx, cy, scaleX, scaleY);
+
+    // 4. Scatter: misses as red X, makes as green circles (on top of everything)
     for (const shot of shots) {
         const px = cx(shot.coordinate_x);
         const py = cy(shot.coordinate_y);
@@ -155,4 +166,29 @@ export function renderShotChart(canvas, shots) {
             ctx.stroke();
         }
     }
+
+    // 5. Color scale legend (right of court, centered vertically)
+    const legendW = 28;
+    const legendH = 192;
+    const legendX = courtW + (legendMargin - legendW) / 2;
+    const legendY = (H - legendH) / 2;
+
+    for (let i = 0; i < legendH; i++) {
+        const t = 1 - i / (legendH - 1); // top=1 (hot), bottom=0 (cold)
+        const [r, g, b] = heatColor(t);
+        ctx.fillStyle = `rgb(${r},${g},${b})`;
+        ctx.fillRect(legendX, legendY + i, legendW, 1);
+    }
+
+    // Legend border
+    ctx.strokeStyle = '#ccc';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(legendX, legendY, legendW, legendH);
+
+    // Labels
+    ctx.fillStyle = '#999';
+    ctx.font = '11px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Hot', legendX + legendW / 2, legendY - 4);
+    ctx.fillText('Cold', legendX + legendW / 2, legendY + legendH + 12);
 }

@@ -1,5 +1,5 @@
 import { initDB, getTeams, getTeam, getTeamGames, getTeamTopPlayers,
-         getPlayerShots, getPlayer, getPlayerTeamName,
+         getPlayerShots, getPlayer, getPlayerTeamName, getPlayerSeasonStats,
          searchTeams, searchPlayers, getTeamStats } from './db.js';
 import { loadPredictions, getPrediction, getPredictionTeams } from './predict.js';
 import { renderSeasonLog, shortName } from './charts/season-log.js';
@@ -146,6 +146,7 @@ function renderPredictPage() {
                     <div class="picker-dropdown hidden"></div>
                 </div>
             </div>
+            <p class="predict-hint">Select any two teams to see win probabilities from the MaxModel💯, assuming a neutral-site game.</p>
             <div class="prediction-result hidden" id="prediction-result"></div>
         </div>
     `;
@@ -217,9 +218,12 @@ function renderUpcomingGames(container, data) {
     }
 
     const dateObj = new Date(data.date + 'T12:00:00');
-    const dateLabel = dateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    const dd = String(dateObj.getDate()).padStart(2, '0');
+    const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const yyyy = dateObj.getFullYear();
+    const dateLabel = `${mm}/${dd}/${yyyy}`;
 
-    let html = `<h2 class="section-title">${dateLabel}</h2>`;
+    let html = `<h2 class="section-title">MaxModel Predictions</h2><p class="section-subtitle">${dateLabel}</p>`;
     html += '<div class="games-grid">';
 
     for (const game of games) {
@@ -443,18 +447,104 @@ function renderPlayerPage(athleteId) {
 
     const teamName = player.last_team_id ? getPlayerTeamName(player.last_team_id) : null;
     const shots = getPlayerShots(athleteId);
-    const makes = shots.filter(s => s.scoring_play).length;
-    const total = shots.length;
-    const fgPct = total > 0 ? (makes / total * 100).toFixed(1) : '0.0';
+    const stats = getPlayerSeasonStats(athleteId);
+
+    // Shot zone breakdowns from shot data
+    const threeLineY = 8;
+    const paintXMin = 19, paintXMax = 31, paintYMax = 19;
+    let paintM = 0, paintA = 0, midM = 0, midA = 0, threeM = 0, threeA = 0;
+    for (const s of shots) {
+        const inPaint = s.coordinate_x >= paintXMin && s.coordinate_x <= paintXMax && s.coordinate_y <= paintYMax;
+        // Three-point: beyond the arc (simplified: y > threeLineY or x < 3.3 or x > 46.7)
+        const isThree = s.coordinate_y > threeLineY + 2 ||
+                        s.coordinate_x < 3.3 || s.coordinate_x > 46.7 ||
+                        Math.hypot(s.coordinate_x - 25, s.coordinate_y - 4) > 21.7;
+        if (isThree) {
+            threeA++; if (s.scoring_play) threeM++;
+        } else if (inPaint) {
+            paintA++; if (s.scoring_play) paintM++;
+        } else {
+            midA++; if (s.scoring_play) midM++;
+        }
+    }
+
+    const pct = (m, a) => a > 0 ? (m / a * 100).toFixed(1) : '-';
+
+    const fgPct = stats && stats.fga > 0 ? (stats.fgm / stats.fga * 100).toFixed(1) : '-';
+    const threePct = stats && stats.threes_att > 0 ? (stats.threes_made / stats.threes_att * 100).toFixed(1) : '-';
+    const ftPct = stats && stats.fta > 0 ? (stats.ftm / stats.fta * 100).toFixed(1) : '-';
 
     app.innerHTML = `
         <div class="player-page">
-            <h1>${player.display_name}</h1>
-            ${teamName ? `<a class="team-link" href="#/team/${player.last_team_id}">${teamName}</a>` : ''}
-            <div class="stats-line">${total} shots | ${makes}/${total} FG (${fgPct}%) | ${player.position || ''}</div>
+            <div class="player-header">
+                <div>
+                    <h1>${player.display_name}</h1>
+                    ${teamName ? `<a class="team-link" href="#/team/${player.last_team_id}">${teamName}</a>` : ''}
+                    ${player.position ? `<span class="player-pos">${player.position}</span>` : ''}
+                </div>
+            </div>
+
+            ${stats && stats.games > 0 ? `
+            <div class="player-stats-grid">
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${stats.ppg}</div>
+                    <div class="player-stat-label">PPG</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${stats.rpg}</div>
+                    <div class="player-stat-label">RPG</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${stats.apg}</div>
+                    <div class="player-stat-label">APG</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${stats.mpg}</div>
+                    <div class="player-stat-label">MPG</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${fgPct}%</div>
+                    <div class="player-stat-label">FG%</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${threePct}%</div>
+                    <div class="player-stat-label">3PT%</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${ftPct}%</div>
+                    <div class="player-stat-label">FT%</div>
+                </div>
+                <div class="player-stat-card">
+                    <div class="player-stat-value">${stats.games}</div>
+                    <div class="player-stat-label">GP</div>
+                </div>
+            </div>
+            ` : ''}
+
             <div class="section-title">Shot Chart</div>
-            <div class="shot-chart-container">
-                <canvas id="shot-chart"></canvas>
+            <div class="player-shot-layout">
+                <div class="shot-chart-container">
+                    <canvas id="shot-chart"></canvas>
+                </div>
+                ${shots.length > 0 ? `
+                <div class="shot-zones">
+                    <div class="shot-zone">
+                        <div class="zone-label">Paint</div>
+                        <div class="zone-pct">${pct(paintM, paintA)}%</div>
+                        <div class="zone-detail">${paintM}/${paintA}</div>
+                    </div>
+                    <div class="shot-zone">
+                        <div class="zone-label">Mid-Range</div>
+                        <div class="zone-pct">${pct(midM, midA)}%</div>
+                        <div class="zone-detail">${midM}/${midA}</div>
+                    </div>
+                    <div class="shot-zone">
+                        <div class="zone-label">Three-Point</div>
+                        <div class="zone-pct">${pct(threeM, threeA)}%</div>
+                        <div class="zone-detail">${threeM}/${threeA}</div>
+                    </div>
+                </div>
+                ` : ''}
             </div>
         </div>
     `;

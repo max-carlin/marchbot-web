@@ -133,6 +133,24 @@ export function getPlayer(athleteId) {
     return rows[0] || null;
 }
 
+export function getPlayerSeasonStats(athleteId) {
+    const rows = query(`
+        SELECT COUNT(*) as games,
+               ROUND(AVG(points), 1) as ppg,
+               ROUND(AVG(rebounds), 1) as rpg,
+               ROUND(AVG(assists), 1) as apg,
+               ROUND(AVG(steals), 1) as spg,
+               ROUND(AVG(blocks), 1) as bpg,
+               ROUND(AVG(minutes), 1) as mpg,
+               SUM(fg_made) as fgm, SUM(fg_att) as fga,
+               SUM(three_made) as threes_made, SUM(three_att) as threes_att,
+               SUM(ft_made) as ftm, SUM(ft_att) as fta
+        FROM player_game_stats
+        WHERE athlete_id = ?
+    `, [athleteId]);
+    return rows[0] || null;
+}
+
 export function getPlayerTeamName(teamId) {
     const rows = query("SELECT team_name FROM teams WHERE team_id = ?", [teamId]);
     return rows[0] ? rows[0].team_name : null;

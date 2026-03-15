@@ -2,30 +2,43 @@
  * Draw a half basketball court on an HTML5 Canvas.
  * ESPN coords: x=0-50 (sideline to sideline), y=0 at baseline, basket ~y=4.
  * Canvas is mapped so court coords can be used directly after scaling.
+ *
+ * Split into background + lines so shot-chart.js can sandwich the heatmap
+ * between them (heatmap on top of background, lines on top of heatmap).
  */
-export function drawHalfCourt(ctx, width, height) {
-    const courtColor = '#e8dcc8';
-    const lineColor = '#4a3728';
-    const lw = 1.5;
 
-    // Map court coords (x: -2..52, y: -3..35) to canvas pixels
-    const courtXMin = -2, courtXMax = 52;
-    const courtYMin = -3, courtYMax = 35;
+const courtColor = '#ffffff';
+const lineColor = '#000000';
+const lw = 1.5;
+
+const courtXMin = -2, courtXMax = 52;
+const courtYMin = -3, courtYMax = 35;
+
+function makeTransforms(width, height) {
     const scaleX = width / (courtXMax - courtXMin);
     const scaleY = height / (courtYMax - courtYMin);
-
     function cx(x) { return (x - courtXMin) * scaleX; }
-    // Flip Y so baseline is at bottom
     function cy(y) { return height - (y - courtYMin) * scaleY; }
+    return { cx, cy, scaleX, scaleY };
+}
 
-    // Background
+/**
+ * Draw only the court background (white fill). Returns transform helpers.
+ */
+export function drawCourtBackground(ctx, width, height) {
+    const t = makeTransforms(width, height);
     ctx.fillStyle = courtColor;
     ctx.fillRect(0, 0, width, height);
+    return t;
+}
 
+/**
+ * Draw court lines/arcs on top of whatever is already on the canvas.
+ */
+export function drawCourtLines(ctx, width, height, cx, cy, scaleX, scaleY) {
     ctx.strokeStyle = lineColor;
     ctx.lineWidth = lw;
 
-    // Helper: line
     function line(x1, y1, x2, y2, w) {
         ctx.lineWidth = w || lw;
         ctx.beginPath();
@@ -34,7 +47,6 @@ export function drawHalfCourt(ctx, width, height) {
         ctx.stroke();
     }
 
-    // Helper: arc
     function arc(centerX, centerY, radiusX, radiusY, startDeg, endDeg, dash) {
         ctx.save();
         if (dash) ctx.setLineDash([4, 4]);
@@ -82,6 +94,13 @@ export function drawHalfCourt(ctx, width, height) {
 
     // Half court line
     line(0, 47, 50, 47);
+}
 
-    return { cx, cy, scaleX, scaleY };
+/**
+ * Legacy: draw background + lines in one call. Returns transform helpers.
+ */
+export function drawHalfCourt(ctx, width, height) {
+    const t = drawCourtBackground(ctx, width, height);
+    drawCourtLines(ctx, width, height, t.cx, t.cy, t.scaleX, t.scaleY);
+    return t;
 }
