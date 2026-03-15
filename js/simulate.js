@@ -25,7 +25,7 @@ export async function loadSimProfiles() {
     return loadingPromise;
 }
 
-function getProfile(teamId) {
+export function getProfile(teamId) {
     if (!simData || !simData.teams) return null;
     return simData.teams[String(teamId)] || null;
 }
@@ -82,7 +82,7 @@ function weightedSampleWithout(weights, k) {
 
 // ── Simulation engine ──
 
-function samplePossessions(profileA, profileB) {
+export function samplePossessions(profileA, profileB) {
     const expected = (profileA.possessions_per_game + profileB.possessions_per_game) / 2;
     const perTeam = Math.round(randNormal(expected, PACE_STD));
     return Math.max(perTeam, 40);
@@ -169,7 +169,7 @@ function simulatePossession(teamOff, teamDef, lineup, leagueAvg) {
     }
 }
 
-function simulateGame(profileA, profileB, leagueAvg, traceGame) {
+export function simulateGame(profileA, profileB, leagueAvg, traceGame) {
     const nPoss = samplePossessions(profileA, profileB);
     const boxA = {};
     const boxB = {};

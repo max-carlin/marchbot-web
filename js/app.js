@@ -3,6 +3,7 @@ import { initDB, getTeams, getTeam, getTeamGames, getTeamTopPlayers,
          searchTeams, searchPlayers, getTeamStats } from './db.js';
 import { loadPredictions, getPrediction, getPredictionTeams } from './predict.js';
 import { renderSimulateButton, loadSimProfiles } from './simulate.js';
+import { initAutoSimViz } from './sim-viz.js';
 import { renderSeasonLog, shortName } from './charts/season-log.js';
 import { renderTopPlayersBars, renderTopPlayersScatter } from './charts/top-players.js';
 import { renderShotChart } from './charts/shot-chart.js';
@@ -190,9 +191,11 @@ function renderHomePage() {
                 <div class="loading-content"><p>Loading upcoming games...</p></div>
             </div>
         </div>
+        <div class="sim-viz-section" id="sim-viz-container"></div>
     `;
 
     loadUpcomingGames();
+    initAutoSimViz().catch(() => {});
 }
 
 async function loadUpcomingGames() {
