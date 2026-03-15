@@ -92,7 +92,7 @@ export function renderSeasonLog(canvas, teamId, games) {
             scales: {
                 x: {
                     ticks: {
-                        color: '#8b8fa3',
+                        color: '#000000',
                         font: { size: 10 },
                         maxRotation: 60,
                         minRotation: 40,
@@ -100,12 +100,12 @@ export function renderSeasonLog(canvas, teamId, games) {
                     grid: { display: false }
                 },
                 y: {
-                    ticks: { color: '#8b8fa3' },
-                    grid: { color: 'rgba(255,255,255,0.05)' },
+                    ticks: { color: '#000000' },
+                    grid: { color: 'rgba(0,0,0,0.1)' },
                     title: {
                         display: true,
                         text: 'Point Margin',
-                        color: '#8b8fa3',
+                        color: '#000000',
                     }
                 }
             }
@@ -115,7 +115,7 @@ export function renderSeasonLog(canvas, teamId, games) {
             afterDatasetsDraw(chart) {
                 const { ctx: c, scales: { x, y } } = chart;
                 c.font = 'bold 9px sans-serif';
-                c.fillStyle = '#e4e6f0';
+                c.fillStyle = '#000000';
                 c.textAlign = 'center';
                 chart.data.datasets[0].data.forEach((val, i) => {
                     const xPos = x.getPixelForValue(i);

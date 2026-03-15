@@ -39,17 +39,17 @@ export function renderTopPlayersBars(barsCanvas, players) {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    labels: { color: '#e4e6f0', font: { size: 11 } }
+                    labels: { color: '#000000', font: { size: 11 } }
                 }
             },
             scales: {
                 x: {
-                    ticks: { color: '#8b8fa3' },
-                    grid: { color: 'rgba(255,255,255,0.05)' },
-                    title: { display: true, text: 'Per Game', color: '#8b8fa3' }
+                    ticks: { color: '#000000' },
+                    grid: { color: 'rgba(0,0,0,0.1)' },
+                    title: { display: true, text: 'Per Game', color: '#000000' }
                 },
                 y: {
-                    ticks: { color: '#e4e6f0', font: { size: 11 } },
+                    ticks: { color: '#000000', font: { size: 11 } },
                     grid: { display: false }
                 }
             }
@@ -107,19 +107,19 @@ export function renderTopPlayersScatter(scatterCanvas, players) {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    labels: { color: '#e4e6f0', font: { size: 10 } }
+                    labels: { color: '#000000', font: { size: 10 } }
                 }
             },
             scales: {
                 x: {
                     min: 0,
                     max: 105,
-                    ticks: { color: '#8b8fa3' },
-                    grid: { color: 'rgba(255,255,255,0.05)' },
-                    title: { display: true, text: 'Percentage', color: '#8b8fa3' }
+                    ticks: { color: '#000000' },
+                    grid: { color: 'rgba(0,0,0,0.1)' },
+                    title: { display: true, text: 'Percentage', color: '#000000' }
                 },
                 y: {
-                    ticks: { color: '#e4e6f0', font: { size: 11 } },
+                    ticks: { color: '#000000', font: { size: 11 } },
                     grid: { display: false }
                 }
             }
