@@ -2,6 +2,7 @@ import { initDB, getTeams, getTeam, getTeamGames, getTeamTopPlayers,
          getPlayerShots, getPlayer, getPlayerTeamName, getPlayerSeasonStats,
          searchTeams, searchPlayers, getTeamStats } from './db.js';
 import { loadPredictions, getPrediction, getPredictionTeams } from './predict.js';
+import { renderSimulateButton, loadSimProfiles } from './simulate.js';
 import { renderSeasonLog, shortName } from './charts/season-log.js';
 import { renderTopPlayersBars, renderTopPlayersScatter } from './charts/top-players.js';
 import { renderShotChart } from './charts/shot-chart.js';
@@ -16,8 +17,9 @@ async function init() {
         document.getElementById('progress-text').textContent = pct + '%';
     });
 
-    // Load predictions in background (non-blocking)
+    // Load predictions and sim profiles in background (non-blocking)
     loadPredictions().catch(() => {});
+    loadSimProfiles().catch(() => {});
 
     // Setup sidebar
     setupSidebar();
@@ -647,6 +649,8 @@ function showPrediction(team1, team2) {
         </div>
         <div style="margin-top:8px; font-size:12px; color:var(--text-dim)">Neutral site prediction</div>
     `;
+
+    renderSimulateButton(result, team1, team2);
 }
 
 // Boot
