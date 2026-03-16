@@ -254,7 +254,7 @@ export function simulateGame(profileA, profileB, leagueAvg, traceGame) {
     return { scoreA, scoreB, boxA, boxB, trace };
 }
 
-function runSimulations(profileA, profileB, nSims) {
+export function runSimulations(profileA, profileB, nSims) {
     const leagueAvg = simData ? simData.league_avg_eff : 100.0;
     const scoresA = [];
     const scoresB = [];

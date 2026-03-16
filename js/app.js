@@ -4,6 +4,7 @@ import { initDB, getTeams, getTeam, getTeamGames, getTeamTopPlayers,
 import { loadPredictions, getPrediction, getPredictionTeams } from './predict.js';
 import { renderSimulateButton, loadSimProfiles } from './simulate.js';
 import { initAutoSimViz } from './sim-viz.js';
+import { renderBracket } from './bracket.js';
 import { renderSeasonLog, shortName } from './charts/season-log.js';
 import { renderTopPlayersBars, renderTopPlayersScatter } from './charts/top-players.js';
 import { renderShotChart } from './charts/shot-chart.js';
@@ -185,16 +186,11 @@ function renderHomePage() {
                 <iframe src="output.html" title="marchbot logo"></iframe>
             </div>
         </div>
-        <div class="games-backdrop">
-            <iframe class="backdrop-iframe" src="dunk.html" title="background animation"></iframe>
-            <div class="games-content" id="upcoming-games">
-                <div class="loading-content"><p>Loading upcoming games...</p></div>
-            </div>
-        </div>
+        <div id="bracket-container"></div>
         <div class="sim-viz-section" id="sim-viz-container"></div>
     `;
 
-    loadUpcomingGames();
+    renderBracket(document.getElementById('bracket-container')).catch(() => {});
     initAutoSimViz().catch(() => {});
 }
 

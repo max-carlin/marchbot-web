@@ -1,0 +1,2317 @@
+{
+  "generated": "2026-03-16T10:37:26.609Z",
+  "xgboost": {
+    "rounds": [
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2653",
+            "name": "Troy Trojans",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2653.png",
+            "region": "South"
+          },
+          "winProb": 0.863,
+          "winnerId": "158"
+        },
+        {
+          "teamA": {
+            "id": "238",
+            "name": "Vanderbilt Commodores",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2377",
+            "name": "McNeese Cowboys",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2377.png",
+            "region": "South"
+          },
+          "winProb": 0.541,
+          "winnerId": "238"
+        },
+        {
+          "teamA": {
+            "id": "153",
+            "name": "North Carolina Tar Heels",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2670",
+            "name": "VCU Rams",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png",
+            "region": "South"
+          },
+          "winProb": 0.376,
+          "winnerId": "2670"
+        },
+        {
+          "teamA": {
+            "id": "2608",
+            "name": "Saint Mary's Gaels",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "245",
+            "name": "Texas A&M Aggies",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+            "region": "South"
+          },
+          "winProb": 0.919,
+          "winnerId": "2608"
+        },
+        {
+          "teamA": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "219",
+            "name": "Pennsylvania Quakers",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/219.png",
+            "region": "South"
+          },
+          "winProb": 0.94,
+          "winnerId": "356"
+        },
+        {
+          "teamA": {
+            "id": "248",
+            "name": "Houston Cougars",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "70",
+            "name": "Idaho Vandals",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/70.png",
+            "region": "South"
+          },
+          "winProb": 0.951,
+          "winnerId": "248"
+        },
+        {
+          "teamA": {
+            "id": "228",
+            "name": "Clemson Tigers",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2294",
+            "name": "Iowa Hawkeyes",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+            "region": "South"
+          },
+          "winProb": 0.762,
+          "winnerId": "228"
+        },
+        {
+          "teamA": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2329",
+            "name": "Lehigh Mountain Hawks",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2329.png",
+            "region": "South"
+          },
+          "winProb": 0.993,
+          "winnerId": "57"
+        },
+        {
+          "teamA": {
+            "id": "194",
+            "name": "Ohio State Buckeyes",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2628",
+            "name": "TCU Horned Frogs",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+            "region": "East"
+          },
+          "winProb": 0.496,
+          "winnerId": "194"
+        },
+        {
+          "teamA": {
+            "id": "97",
+            "name": "Louisville Cardinals",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "58",
+            "name": "South Florida Bulls",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+            "region": "East"
+          },
+          "winProb": 0.347,
+          "winnerId": "58"
+        },
+        {
+          "teamA": {
+            "id": "150",
+            "name": "Duke Blue Devils",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2561",
+            "name": "Siena Saints",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png",
+            "region": "East"
+          },
+          "winProb": 0.992,
+          "winnerId": "150"
+        },
+        {
+          "teamA": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2449",
+            "name": "North Dakota State Bison",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2449.png",
+            "region": "East"
+          },
+          "winProb": 0.859,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2460",
+            "name": "Northern Iowa Panthers",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2460.png",
+            "region": "East"
+          },
+          "winProb": 0.852,
+          "winnerId": "2599"
+        },
+        {
+          "teamA": {
+            "id": "26",
+            "name": "UCLA Bruins",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2116",
+            "name": "UCF Knights",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2116.png",
+            "region": "East"
+          },
+          "winProb": 0.841,
+          "winnerId": "26"
+        },
+        {
+          "teamA": {
+            "id": "2305",
+            "name": "Kansas Jayhawks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2856",
+            "name": "California Baptist Lancers",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2856.png",
+            "region": "East"
+          },
+          "winProb": 0.851,
+          "winnerId": "2305"
+        },
+        {
+          "teamA": {
+            "id": "41",
+            "name": "UConn Huskies",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "231",
+            "name": "Furman Paladins",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/231.png",
+            "region": "East"
+          },
+          "winProb": 0.968,
+          "winnerId": "41"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "47",
+            "name": "Howard Bison",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/47.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.976,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "61",
+            "name": "Georgia Bulldogs",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "139",
+            "name": "Saint Louis Billikens",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.628,
+          "winnerId": "139"
+        },
+        {
+          "teamA": {
+            "id": "96",
+            "name": "Kentucky Wildcats",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2541",
+            "name": "Santa Clara Broncos",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.479,
+          "winnerId": "96"
+        },
+        {
+          "teamA": {
+            "id": "2641",
+            "name": "Texas Tech Red Raiders",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2006",
+            "name": "Akron Zips",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2006.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.54,
+          "winnerId": "2006"
+        },
+        {
+          "teamA": {
+            "id": "258",
+            "name": "Virginia Cavaliers",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2750",
+            "name": "Wright State Raiders",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2750.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.971,
+          "winnerId": "258"
+        },
+        {
+          "teamA": {
+            "id": "66",
+            "name": "Iowa State Cyclones",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2634",
+            "name": "Tennessee State Tigers",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2634.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.96,
+          "winnerId": "66"
+        },
+        {
+          "teamA": {
+            "id": "333",
+            "name": "Alabama Crimson Tide",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2275",
+            "name": "Hofstra Pride",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2275.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.752,
+          "winnerId": "333"
+        },
+        {
+          "teamA": {
+            "id": "2633",
+            "name": "Tennessee Volunteers",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2567",
+            "name": "SMU Mustangs",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.839,
+          "winnerId": "2633"
+        },
+        {
+          "teamA": {
+            "id": "275",
+            "name": "Wisconsin Badgers",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2272",
+            "name": "High Point Panthers",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2272.png",
+            "region": "West"
+          },
+          "winProb": 0.584,
+          "winnerId": "2272"
+        },
+        {
+          "teamA": {
+            "id": "8",
+            "name": "Arkansas Razorbacks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "62",
+            "name": "Hawai'i Rainbow Warriors",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/62.png",
+            "region": "West"
+          },
+          "winProb": 0.927,
+          "winnerId": "8"
+        },
+        {
+          "teamA": {
+            "id": "252",
+            "name": "BYU Cougars",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "152",
+            "name": "NC State Wolfpack",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+            "region": "West"
+          },
+          "winProb": 0.707,
+          "winnerId": "152"
+        },
+        {
+          "teamA": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "338",
+            "name": "Kennesaw State Owls",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/338.png",
+            "region": "West"
+          },
+          "winProb": 0.976,
+          "winnerId": "2250"
+        },
+        {
+          "teamA": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "112358",
+            "name": "Long Island University Sharks",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/112358.png",
+            "region": "West"
+          },
+          "winProb": 0.991,
+          "winnerId": "12"
+        },
+        {
+          "teamA": {
+            "id": "222",
+            "name": "Villanova Wildcats",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/222.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "328",
+            "name": "Utah State Aggies",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+            "region": "West"
+          },
+          "winProb": 0.392,
+          "winnerId": "328"
+        },
+        {
+          "teamA": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2511",
+            "name": "Queens University Royals",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2511.png",
+            "region": "West"
+          },
+          "winProb": 0.978,
+          "winnerId": "2509"
+        },
+        {
+          "teamA": {
+            "id": "2390",
+            "name": "Miami Hurricanes",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "142",
+            "name": "Missouri Tigers",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+            "region": "West"
+          },
+          "winProb": 0.733,
+          "winnerId": "142"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "238",
+            "name": "Vanderbilt Commodores",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+            "region": "South"
+          },
+          "winProb": 0.399,
+          "winnerId": "158"
+        },
+        {
+          "teamA": {
+            "id": "2670",
+            "name": "VCU Rams",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2608",
+            "name": "Saint Mary's Gaels",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+            "region": "South"
+          },
+          "winProb": 0.239,
+          "winnerId": "2670"
+        },
+        {
+          "teamA": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "248",
+            "name": "Houston Cougars",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+            "region": "South"
+          },
+          "winProb": 0.474,
+          "winnerId": "356"
+        },
+        {
+          "teamA": {
+            "id": "228",
+            "name": "Clemson Tigers",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "winProb": 0.059,
+          "winnerId": "57"
+        },
+        {
+          "teamA": {
+            "id": "194",
+            "name": "Ohio State Buckeyes",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "58",
+            "name": "South Florida Bulls",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+            "region": "East"
+          },
+          "winProb": 0.331,
+          "winnerId": "58"
+        },
+        {
+          "teamA": {
+            "id": "150",
+            "name": "Duke Blue Devils",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "winProb": 0.906,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "26",
+            "name": "UCLA Bruins",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+            "region": "East"
+          },
+          "winProb": 0.786,
+          "winnerId": "2599"
+        },
+        {
+          "teamA": {
+            "id": "2305",
+            "name": "Kansas Jayhawks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "41",
+            "name": "UConn Huskies",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+            "region": "East"
+          },
+          "winProb": 0.14,
+          "winnerId": "41"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "139",
+            "name": "Saint Louis Billikens",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.959,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "96",
+            "name": "Kentucky Wildcats",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2006",
+            "name": "Akron Zips",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2006.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.414,
+          "winnerId": "96"
+        },
+        {
+          "teamA": {
+            "id": "258",
+            "name": "Virginia Cavaliers",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "66",
+            "name": "Iowa State Cyclones",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.405,
+          "winnerId": "66"
+        },
+        {
+          "teamA": {
+            "id": "333",
+            "name": "Alabama Crimson Tide",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2633",
+            "name": "Tennessee Volunteers",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.509,
+          "winnerId": "2633"
+        },
+        {
+          "teamA": {
+            "id": "2272",
+            "name": "High Point Panthers",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2272.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "8",
+            "name": "Arkansas Razorbacks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+            "region": "West"
+          },
+          "winProb": 0.311,
+          "winnerId": "8"
+        },
+        {
+          "teamA": {
+            "id": "152",
+            "name": "NC State Wolfpack",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "winProb": 0.034,
+          "winnerId": "2250"
+        },
+        {
+          "teamA": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "328",
+            "name": "Utah State Aggies",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+            "region": "West"
+          },
+          "winProb": 0.956,
+          "winnerId": "12"
+        },
+        {
+          "teamA": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "142",
+            "name": "Missouri Tigers",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+            "region": "West"
+          },
+          "winProb": 0.936,
+          "winnerId": "2509"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2670",
+            "name": "VCU Rams",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png",
+            "region": "South"
+          },
+          "winProb": 0.468,
+          "winnerId": "158"
+        },
+        {
+          "teamA": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "winProb": 0.166,
+          "winnerId": "356"
+        },
+        {
+          "teamA": {
+            "id": "58",
+            "name": "South Florida Bulls",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "winProb": 0.456,
+          "winnerId": "58"
+        },
+        {
+          "teamA": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "41",
+            "name": "UConn Huskies",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+            "region": "East"
+          },
+          "winProb": 0.478,
+          "winnerId": "2599"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "96",
+            "name": "Kentucky Wildcats",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.942,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "66",
+            "name": "Iowa State Cyclones",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2633",
+            "name": "Tennessee Volunteers",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.873,
+          "winnerId": "66"
+        },
+        {
+          "teamA": {
+            "id": "8",
+            "name": "Arkansas Razorbacks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "winProb": 0.209,
+          "winnerId": "2250"
+        },
+        {
+          "teamA": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "winProb": 0.772,
+          "winnerId": "12"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "winProb": 0.225,
+          "winnerId": "158"
+        },
+        {
+          "teamA": {
+            "id": "58",
+            "name": "South Florida Bulls",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "winProb": 0.24,
+          "winnerId": "2599"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "66",
+            "name": "Iowa State Cyclones",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.565,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "winProb": 0.387,
+          "winnerId": "12"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "winProb": 0.237,
+          "winnerId": "2599"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "winProb": 0.408,
+          "winnerId": "12"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "winProb": 0.292,
+          "winnerId": "12"
+        }
+      ]
+    ],
+    "champion": {
+      "id": "12",
+      "name": "Arizona Wildcats",
+      "seed": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+      "region": "West"
+    }
+  },
+  "montecarlo": {
+    "rounds": [
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2653",
+            "name": "Troy Trojans",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2653.png",
+            "region": "South"
+          },
+          "winProb": 0.512,
+          "winnerId": "158"
+        },
+        {
+          "teamA": {
+            "id": "238",
+            "name": "Vanderbilt Commodores",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2377",
+            "name": "McNeese Cowboys",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2377.png",
+            "region": "South"
+          },
+          "winProb": 0.82,
+          "winnerId": "238"
+        },
+        {
+          "teamA": {
+            "id": "153",
+            "name": "North Carolina Tar Heels",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2670",
+            "name": "VCU Rams",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png",
+            "region": "South"
+          },
+          "winProb": 0.644,
+          "winnerId": "153"
+        },
+        {
+          "teamA": {
+            "id": "2608",
+            "name": "Saint Mary's Gaels",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "245",
+            "name": "Texas A&M Aggies",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+            "region": "South"
+          },
+          "winProb": 0.612,
+          "winnerId": "2608"
+        },
+        {
+          "teamA": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "219",
+            "name": "Pennsylvania Quakers",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/219.png",
+            "region": "South"
+          },
+          "winProb": 0.878,
+          "winnerId": "356"
+        },
+        {
+          "teamA": {
+            "id": "248",
+            "name": "Houston Cougars",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "70",
+            "name": "Idaho Vandals",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/70.png",
+            "region": "South"
+          },
+          "winProb": 0.802,
+          "winnerId": "248"
+        },
+        {
+          "teamA": {
+            "id": "228",
+            "name": "Clemson Tigers",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2294",
+            "name": "Iowa Hawkeyes",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+            "region": "South"
+          },
+          "winProb": 0.28,
+          "winnerId": "228"
+        },
+        {
+          "teamA": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2329",
+            "name": "Lehigh Mountain Hawks",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2329.png",
+            "region": "South"
+          },
+          "winProb": 0.861,
+          "winnerId": "57"
+        },
+        {
+          "teamA": {
+            "id": "194",
+            "name": "Ohio State Buckeyes",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2628",
+            "name": "TCU Horned Frogs",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+            "region": "East"
+          },
+          "winProb": 0.491,
+          "winnerId": "2628"
+        },
+        {
+          "teamA": {
+            "id": "97",
+            "name": "Louisville Cardinals",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "58",
+            "name": "South Florida Bulls",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+            "region": "East"
+          },
+          "winProb": 0.393,
+          "winnerId": "58"
+        },
+        {
+          "teamA": {
+            "id": "150",
+            "name": "Duke Blue Devils",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2561",
+            "name": "Siena Saints",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png",
+            "region": "East"
+          },
+          "winProb": 0.98,
+          "winnerId": "150"
+        },
+        {
+          "teamA": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2449",
+            "name": "North Dakota State Bison",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2449.png",
+            "region": "East"
+          },
+          "winProb": 0.85,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "2599",
+            "name": "St. John's Red Storm",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2460",
+            "name": "Northern Iowa Panthers",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2460.png",
+            "region": "East"
+          },
+          "winProb": 0.336,
+          "winnerId": "2460"
+        },
+        {
+          "teamA": {
+            "id": "26",
+            "name": "UCLA Bruins",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2116",
+            "name": "UCF Knights",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2116.png",
+            "region": "East"
+          },
+          "winProb": 0.914,
+          "winnerId": "26"
+        },
+        {
+          "teamA": {
+            "id": "2305",
+            "name": "Kansas Jayhawks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2856",
+            "name": "California Baptist Lancers",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2856.png",
+            "region": "East"
+          },
+          "winProb": 0.172,
+          "winnerId": "2856"
+        },
+        {
+          "teamA": {
+            "id": "41",
+            "name": "UConn Huskies",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "231",
+            "name": "Furman Paladins",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/231.png",
+            "region": "East"
+          },
+          "winProb": 0.673,
+          "winnerId": "41"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "47",
+            "name": "Howard Bison",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/47.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.771,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "61",
+            "name": "Georgia Bulldogs",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "139",
+            "name": "Saint Louis Billikens",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.776,
+          "winnerId": "139"
+        },
+        {
+          "teamA": {
+            "id": "96",
+            "name": "Kentucky Wildcats",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2541",
+            "name": "Santa Clara Broncos",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.435,
+          "winnerId": "2541"
+        },
+        {
+          "teamA": {
+            "id": "2641",
+            "name": "Texas Tech Red Raiders",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2006",
+            "name": "Akron Zips",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2006.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.631,
+          "winnerId": "2006"
+        },
+        {
+          "teamA": {
+            "id": "258",
+            "name": "Virginia Cavaliers",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2750",
+            "name": "Wright State Raiders",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2750.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.755,
+          "winnerId": "258"
+        },
+        {
+          "teamA": {
+            "id": "66",
+            "name": "Iowa State Cyclones",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2634",
+            "name": "Tennessee State Tigers",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2634.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.851,
+          "winnerId": "66"
+        },
+        {
+          "teamA": {
+            "id": "333",
+            "name": "Alabama Crimson Tide",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2275",
+            "name": "Hofstra Pride",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2275.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.758,
+          "winnerId": "333"
+        },
+        {
+          "teamA": {
+            "id": "2633",
+            "name": "Tennessee Volunteers",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2567",
+            "name": "SMU Mustangs",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.56,
+          "winnerId": "2633"
+        },
+        {
+          "teamA": {
+            "id": "275",
+            "name": "Wisconsin Badgers",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2272",
+            "name": "High Point Panthers",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2272.png",
+            "region": "West"
+          },
+          "winProb": 0.715,
+          "winnerId": "275"
+        },
+        {
+          "teamA": {
+            "id": "8",
+            "name": "Arkansas Razorbacks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "62",
+            "name": "Hawai'i Rainbow Warriors",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/62.png",
+            "region": "West"
+          },
+          "winProb": 0.79,
+          "winnerId": "8"
+        },
+        {
+          "teamA": {
+            "id": "252",
+            "name": "BYU Cougars",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "152",
+            "name": "NC State Wolfpack",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+            "region": "West"
+          },
+          "winProb": 0.407,
+          "winnerId": "152"
+        },
+        {
+          "teamA": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "338",
+            "name": "Kennesaw State Owls",
+            "seed": 14,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/338.png",
+            "region": "West"
+          },
+          "winProb": 0.893,
+          "winnerId": "2250"
+        },
+        {
+          "teamA": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "112358",
+            "name": "Long Island University Sharks",
+            "seed": 16,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/112358.png",
+            "region": "West"
+          },
+          "winProb": 0.914,
+          "winnerId": "12"
+        },
+        {
+          "teamA": {
+            "id": "222",
+            "name": "Villanova Wildcats",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/222.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "328",
+            "name": "Utah State Aggies",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+            "region": "West"
+          },
+          "winProb": 0.336,
+          "winnerId": "328"
+        },
+        {
+          "teamA": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2511",
+            "name": "Queens University Royals",
+            "seed": 15,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2511.png",
+            "region": "West"
+          },
+          "winProb": 0.839,
+          "winnerId": "2509"
+        },
+        {
+          "teamA": {
+            "id": "2390",
+            "name": "Miami Hurricanes",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "142",
+            "name": "Missouri Tigers",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+            "region": "West"
+          },
+          "winProb": 0.561,
+          "winnerId": "142"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "158",
+            "name": "Nebraska Cornhuskers",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "238",
+            "name": "Vanderbilt Commodores",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+            "region": "South"
+          },
+          "winProb": 0.249,
+          "winnerId": "238"
+        },
+        {
+          "teamA": {
+            "id": "153",
+            "name": "North Carolina Tar Heels",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2608",
+            "name": "Saint Mary's Gaels",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+            "region": "South"
+          },
+          "winProb": 0.507,
+          "winnerId": "2608"
+        },
+        {
+          "teamA": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "248",
+            "name": "Houston Cougars",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+            "region": "South"
+          },
+          "winProb": 0.525,
+          "winnerId": "356"
+        },
+        {
+          "teamA": {
+            "id": "228",
+            "name": "Clemson Tigers",
+            "seed": 8,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "winProb": 0.175,
+          "winnerId": "57"
+        },
+        {
+          "teamA": {
+            "id": "2628",
+            "name": "TCU Horned Frogs",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "58",
+            "name": "South Florida Bulls",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+            "region": "East"
+          },
+          "winProb": 0.38,
+          "winnerId": "2628"
+        },
+        {
+          "teamA": {
+            "id": "150",
+            "name": "Duke Blue Devils",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "winProb": 0.653,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "2460",
+            "name": "Northern Iowa Panthers",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2460.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "26",
+            "name": "UCLA Bruins",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+            "region": "East"
+          },
+          "winProb": 0.626,
+          "winnerId": "26"
+        },
+        {
+          "teamA": {
+            "id": "2856",
+            "name": "California Baptist Lancers",
+            "seed": 13,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2856.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "41",
+            "name": "UConn Huskies",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+            "region": "East"
+          },
+          "winProb": 0.329,
+          "winnerId": "41"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "139",
+            "name": "Saint Louis Billikens",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.825,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "2541",
+            "name": "Santa Clara Broncos",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2006",
+            "name": "Akron Zips",
+            "seed": 12,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2006.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.554,
+          "winnerId": "2541"
+        },
+        {
+          "teamA": {
+            "id": "258",
+            "name": "Virginia Cavaliers",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "66",
+            "name": "Iowa State Cyclones",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.438,
+          "winnerId": "258"
+        },
+        {
+          "teamA": {
+            "id": "333",
+            "name": "Alabama Crimson Tide",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2633",
+            "name": "Tennessee Volunteers",
+            "seed": 6,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.57,
+          "winnerId": "333"
+        },
+        {
+          "teamA": {
+            "id": "275",
+            "name": "Wisconsin Badgers",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "8",
+            "name": "Arkansas Razorbacks",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+            "region": "West"
+          },
+          "winProb": 0.485,
+          "winnerId": "275"
+        },
+        {
+          "teamA": {
+            "id": "152",
+            "name": "NC State Wolfpack",
+            "seed": 11,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "winProb": 0.223,
+          "winnerId": "2250"
+        },
+        {
+          "teamA": {
+            "id": "12",
+            "name": "Arizona Wildcats",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "328",
+            "name": "Utah State Aggies",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+            "region": "West"
+          },
+          "winProb": 0.75,
+          "winnerId": "328"
+        },
+        {
+          "teamA": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "142",
+            "name": "Missouri Tigers",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+            "region": "West"
+          },
+          "winProb": 0.714,
+          "winnerId": "2509"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "238",
+            "name": "Vanderbilt Commodores",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "2608",
+            "name": "Saint Mary's Gaels",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+            "region": "South"
+          },
+          "winProb": 0.647,
+          "winnerId": "238"
+        },
+        {
+          "teamA": {
+            "id": "356",
+            "name": "Illinois Fighting Illini",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "winProb": 0.422,
+          "winnerId": "57"
+        },
+        {
+          "teamA": {
+            "id": "2628",
+            "name": "TCU Horned Frogs",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "winProb": 0.314,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "26",
+            "name": "UCLA Bruins",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "41",
+            "name": "UConn Huskies",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+            "region": "East"
+          },
+          "winProb": 0.532,
+          "winnerId": "26"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2541",
+            "name": "Santa Clara Broncos",
+            "seed": 10,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.738,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "258",
+            "name": "Virginia Cavaliers",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "333",
+            "name": "Alabama Crimson Tide",
+            "seed": 4,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.592,
+          "winnerId": "258"
+        },
+        {
+          "teamA": {
+            "id": "275",
+            "name": "Wisconsin Badgers",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "winProb": 0.293,
+          "winnerId": "2250"
+        },
+        {
+          "teamA": {
+            "id": "328",
+            "name": "Utah State Aggies",
+            "seed": 9,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "winProb": 0.352,
+          "winnerId": "2509"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "238",
+            "name": "Vanderbilt Commodores",
+            "seed": 5,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "winProb": 0.495,
+          "winnerId": "57"
+        },
+        {
+          "teamA": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "26",
+            "name": "UCLA Bruins",
+            "seed": 7,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+            "region": "East"
+          },
+          "winProb": 0.571,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "258",
+            "name": "Virginia Cavaliers",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+            "region": "Midwest"
+          },
+          "winProb": 0.527,
+          "winnerId": "130"
+        },
+        {
+          "teamA": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "teamB": {
+            "id": "2509",
+            "name": "Purdue Boilermakers",
+            "seed": 2,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+            "region": "West"
+          },
+          "winProb": 0.639,
+          "winnerId": "2250"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "57",
+            "name": "Florida Gators",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+            "region": "South"
+          },
+          "teamB": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "winProb": 0.475,
+          "winnerId": "127"
+        },
+        {
+          "teamA": {
+            "id": "130",
+            "name": "Michigan Wolverines",
+            "seed": 1,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+            "region": "Midwest"
+          },
+          "teamB": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "winProb": 0.416,
+          "winnerId": "2250"
+        }
+      ],
+      [
+        {
+          "teamA": {
+            "id": "127",
+            "name": "Michigan State Spartans",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+            "region": "East"
+          },
+          "teamB": {
+            "id": "2250",
+            "name": "Gonzaga Bulldogs",
+            "seed": 3,
+            "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+            "region": "West"
+          },
+          "winProb": 0.429,
+          "winnerId": "2250"
+        }
+      ]
+    ],
+    "champion": {
+      "id": "2250",
+      "name": "Gonzaga Bulldogs",
+      "seed": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+      "region": "West"
+    }
+  }
+}

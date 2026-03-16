@@ -328,8 +328,6 @@ class SimVizController {
         ctx.save();
         ctx.scale(dpr, dpr);
         ctx.clearRect(0, 0, this.displayW, this.displayH);
-        ctx.fillStyle = this.colors.surface;
-        ctx.fillRect(0, 0, this.displayW, this.displayH);
 
         const scene = this.scenes[this.currentScene];
         if (scene) {
