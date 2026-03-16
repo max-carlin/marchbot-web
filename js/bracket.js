@@ -192,8 +192,8 @@ export async function renderBracket(container) {
         <div class="bracket-section">
             <div class="bracket-controls">
                 <select id="bracket-method" class="bracket-method-select">
-                    <option value="xgboost">XGBoost Model</option>
-                    <option value="montecarlo">Monte Carlo Simulation</option>
+                    <option value="xgboost">xgboost </option>
+                    <option value="montecarlo">monte carlo</option>
                 </select>
             </div>
             <div class="bracket-board">

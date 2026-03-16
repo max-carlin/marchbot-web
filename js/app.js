@@ -186,7 +186,10 @@ function renderHomePage() {
                 <iframe src="output.html" title="marchbot logo"></iframe>
             </div>
         </div>
-        <div id="bracket-container"></div>
+        <div class="games-backdrop">
+            <iframe class="backdrop-iframe" src="dunk.html" title="background animation"></iframe>
+            <div class="games-content" id="bracket-container"></div>
+        </div>
         <div class="sim-viz-section" id="sim-viz-container"></div>
     `;
 
