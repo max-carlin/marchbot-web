@@ -324,7 +324,7 @@ for (let i = 0; i < xgboostResult.rounds.length; i++) {
 
 console.log('\nGenerating Monte Carlo bracket...');
 // Use a different seed offset for MC so results differ from XGBoost
-const mcResult = simulateTournament(getMonteCarloProb, SEED + 1000);
+const mcResult = simulateTournament(getMonteCarloProb, 3035);
 console.log(`  Champion: (${mcResult.champion?.seed}) ${mcResult.champion?.name}`);
 for (let i = 0; i < mcResult.rounds.length; i++) {
     console.log(`  Round ${i}: ${mcResult.rounds[i].length} games`);
